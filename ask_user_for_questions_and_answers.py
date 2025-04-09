@@ -57,6 +57,14 @@ class TheQuizzler:
         self.exit_button = tk.Button(root, text="Exit", width=15)
         self.exit_button.pack(side=tk.RIGHT, padx=(10,0))
 
+        # Create a storage for questions, answer, and choices from the user
+        self.question_answer_choices = []
+    
+    def save_all_inputs(self):
+        question = self.question_entry.get()
+        answer = self.answer_entry.get()
+        choices = [entry.get() for entry in self.choice_entries]
+        
 # Initializes the main Tkinter window and runs the event loop to start the GUI application
 if __name__ == "__main__":
     root = tk.Tk()
