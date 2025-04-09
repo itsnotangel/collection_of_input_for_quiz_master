@@ -51,11 +51,11 @@ class TheQuizzler:
 
         # Creating a save button to save the user's inputted question, answer, and choices
         self.save_button = tk.Button(root, text="Save", width=15, command=self.save_all_inputs)
-        self.save_button.pack(side=tk.LEFT, padx=(0,10))
+        self.save_button.pack(pady=(10, 0))
 
         # Creating an exit button to close the application (The Quizzler Maker)
         self.exit_button = tk.Button(root, text="Exit", width=15, command=self.exit_program)
-        self.exit_button.pack(side=tk.RIGHT, padx=(10,0))
+        self.exit_button.pack(pady=(10, 0))     
 
         # Create a storage for questions, answer, and choices from the user
         self.question_answer_choices = []
