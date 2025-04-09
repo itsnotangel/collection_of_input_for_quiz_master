@@ -10,7 +10,7 @@ class TheQuizzler:
         self.root.geometry("500x400")
 
         # Adding the main title of the window
-        main_title_label = tk.Label(root, text="WELCOME TO THE QUIZZLER", font=("Arial", 18))
+        main_title_label = tk.Label(root, text="WELCOME TO THE QUIZZLER", font=("Arial", 18, "bold"), fg="darkred")
         main_title_label.pack(fill=tk.X, pady=(10, 0))
 
         # Adding the question box for user to input their questions
