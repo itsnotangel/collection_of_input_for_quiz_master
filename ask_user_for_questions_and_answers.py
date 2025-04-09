@@ -30,6 +30,17 @@ class TheQuizzler:
         # Adding a "Choices" label text 
         tk.Label(text="Choices:", anchor="w").pack(fill=tk.X, padx=20, pady=(10, 0))
 
+        # Creating a list of entries storing the choices inputted by the user
+        self.choice_entries = []
+
+        # Assigning labels for each choice entry (A - D)
+        self.choice_labels = ['A', 'B', 'C', 'D']
+
+        # Looping over the choices to assign a labels for each one
+        for i in range(4):
+            choice_label = tk.Label(text=f"{self.choice_labels[i]}:", anchor="w")
+            choice_label.pack(side=tk.LEFT, padx=5)
+            
 # Initializes the main Tkinter window and runs the event loop to start the GUI application
 if __name__ == "__main__":
     root = tk.Tk()
