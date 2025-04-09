@@ -14,14 +14,14 @@ class TheQuizzler:
         main_title_label.pack(fill=tk.X, pady=(10, 0))
 
         # Adding the question box for user to input their questions
-        tk.Label(text="Question:", anchor="w").pack(fill=tk.X, padx=20, pady=(10, 0))
+        tk.Label(text="Question:", font=("Arial", 8, "bold"), fg="darkred", anchor="w").pack(fill=tk.X, padx=20, pady=(10, 0))
         self.question_entry = tk.Entry(root)
-        self.question_entry.pack(fill=tk.X, padx=18)
+        self.question_entry.pack(fill=tk.X, padx=23)
 
         # Adding the answer box for user to input the correct answer
-        tk.Label(text="Correct Answer:", anchor="w").pack(fill=tk.X, padx=20, pady=(10, 0))
+        tk.Label(text="Correct Answer:", font=("Arial", 8, "bold"), fg="darkred", anchor="w").pack(fill=tk.X, padx=20, pady=(10, 0))
         self.answer_entry = tk.Entry(root)
-        self.answer_entry.pack(fill=tk.X, padx=18)
+        self.answer_entry.pack(fill=tk.X, padx=23)
 
         # Getting the window size and printing it to the console (Only for checking the size)
         window_width = self.root.winfo_width()
@@ -29,7 +29,7 @@ class TheQuizzler:
         print(f"Window Size: {window_width}x{window_height}")
 
         # Adding a "Choices" label text 
-        tk.Label(text="Choices:", anchor="w").pack(fill=tk.X, padx=20, pady=(10, 0))
+        tk.Label(text="Choices:", font=("Arial", 8, "bold"), fg="darkred", anchor="w").pack(fill=tk.X, padx=20, pady=(10, 0))
 
         # Creating a list of entries storing the choices inputted by the user
         self.choice_entries = []
@@ -42,7 +42,7 @@ class TheQuizzler:
             choice_frame = tk.Frame(root)
             choice_frame.pack(fill=tk.X, padx=20, pady=5)
 
-            choice_label = tk.Label(choice_frame, text=f"{self.choice_labels[i]}:", anchor="w")
+            choice_label = tk.Label(choice_frame, text=f"{self.choice_labels[i]}:", font=("Arial", 8, "bold"), fg="black", anchor="w")
             choice_label.pack(side=tk.LEFT, padx=5)
 
             # Adding an entry box for each choice (A, B, C, D)
@@ -51,11 +51,11 @@ class TheQuizzler:
             self.choice_entries.append(entry)
 
         # Creating a save button to save the user's inputted question, answer, and choices
-        self.save_button = tk.Button(root, text="Save", width=15, command=self.save_all_inputs)
+        self.save_button = tk.Button(root, text="Save", font=("Arial", 8, "bold"), fg="darkred", width=15, command=self.save_all_inputs)
         self.save_button.pack(pady=(10, 0))
 
         # Creating an exit button to close the application (The Quizzler Maker)
-        self.exit_button = tk.Button(root, text="Exit", width=15, command=self.exit_program)
+        self.exit_button = tk.Button(root, text="Exit", font=("Arial", 8, "bold"), fg="darkred", width=15, command=self.exit_program)
         self.exit_button.pack(pady=(10, 0))     
 
         # Create a storage for questions, answer, and choices from the user
