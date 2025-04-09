@@ -54,7 +54,7 @@ class TheQuizzler:
         self.save_button.pack(side=tk.LEFT, padx=(0,10))
 
         # Creating an exit button to close the application (The Quizzler Maker)
-        self.exit_button = tk.Button(root, text="Exit", width=15)
+        self.exit_button = tk.Button(root, text="Exit", width=15, command=self.exit_program)
         self.exit_button.pack(side=tk.RIGHT, padx=(10,0))
 
         # Create a storage for questions, answer, and choices from the user
@@ -82,6 +82,10 @@ class TheQuizzler:
         }
 
         self.question_answer_choices.append(question_answer_choices_data)
+        
+    # Exiting the program method
+    def exit_program(self):
+        self.root.destroy()
         
 # Initializes the main Tkinter window and runs the event loop to start the GUI application
 if __name__ == "__main__":
