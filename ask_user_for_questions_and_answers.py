@@ -17,6 +17,11 @@ class TheQuizzler:
         self.question_entry = tk.Entry(root)
         self.question_entry.pack(fill=tk.X, padx=18)
 
+        # Adding the answer box for user to input the correct answer
+        tk.Label(text="Correct Answer:", anchor="w").pack(fill=tk.X, padx=20, pady=(10, 0))
+        self.answer_entry = tk.Entry(root)
+        self.answer_entry.pack(fill=tk.X, padx=18)
+
         # Getting the window size and printing it to the console (Only for checking the size)
         window_width = self.root.winfo_width()
         window_height = self.root.winfo_height()
