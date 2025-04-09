@@ -53,6 +53,10 @@ class TheQuizzler:
         self.save_button = tk.Button(root, text="Save", width=15)
         self.save_button.pack(side=tk.LEFT, padx=(0,10))
 
+        # Creating an exit button to close the application (The Quizzler Maker)
+        self.exit_button = tk.Button(root, text="Exit", width=15)
+        self.exit_button.pack(side=tk.RIGHT, padx=(10,0))
+
 # Initializes the main Tkinter window and runs the event loop to start the GUI application
 if __name__ == "__main__":
     root = tk.Tk()
