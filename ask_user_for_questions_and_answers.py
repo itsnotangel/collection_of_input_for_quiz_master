@@ -92,6 +92,8 @@ class TheQuizzler:
 
         self.clear_field()
 
+        messagebox.showinfo("SUCCESS!", "All the inputs have been saved successfully!")
+
     # Function to clear the input field 
     def clear_field(self):
         self.question_entry.delete(0, tk.END)
