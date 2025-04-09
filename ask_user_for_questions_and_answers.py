@@ -46,8 +46,9 @@ class TheQuizzler:
 
             # Adding an entry box for each choice (A, B, C, D)
             entry = tk.Entry(choice_frame)
-            entry.pack(side=tk.LEFT, fill=tk.X)
-                       
+            entry.pack(side=tk.LEFT, fill=tk.X, expand=True)
+            self.choice_entries.append(entry)
+
 # Initializes the main Tkinter window and runs the event loop to start the GUI application
 if __name__ == "__main__":
     root = tk.Tk()
