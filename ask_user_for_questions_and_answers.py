@@ -82,7 +82,16 @@ class TheQuizzler:
         }
 
         self.question_answer_choices.append(question_answer_choices_data)
-        
+
+        self.clear_field()
+
+    # Function to clear the input field 
+    def clear_field(self):
+        self.question_entry.delete(0, tk.END)
+        self.answer_entry.delete(0, tk. END)
+        for entry in self.choice_entries:
+            entry.delete(0, tk.END)
+
     # Exiting the program method
     def exit_program(self):
         self.root.destroy()
