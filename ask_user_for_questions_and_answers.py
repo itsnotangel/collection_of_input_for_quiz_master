@@ -6,7 +6,8 @@ from tkinter import messagebox
 class TheQuizzler:
     def __init__(self, root):
         self.root = root
-        self.root.geometry("400x400")
+        self.root.title("The Quizzler - The ultimate Quiz in the Making")
+        self.root.geometry("500x400")
 
         # Adding the main title of the window
         main_title_label = tk.Label(root, text="WELCOME TO THE QUIZZLER", font=("Arial", 18))
