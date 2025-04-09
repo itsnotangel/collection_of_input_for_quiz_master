@@ -49,6 +49,10 @@ class TheQuizzler:
             entry.pack(side=tk.LEFT, fill=tk.X, expand=True)
             self.choice_entries.append(entry)
 
+        # Creating a save button to save the user's inputted question, answer, and choices
+        self.save_button = tk.Button(root, text="Save", width=15)
+        self.save_button.pack(side=tk.LEFT, padx=(0,10))
+
 # Initializes the main Tkinter window and runs the event loop to start the GUI application
 if __name__ == "__main__":
     root = tk.Tk()
