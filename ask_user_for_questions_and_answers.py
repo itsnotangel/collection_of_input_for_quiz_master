@@ -83,6 +83,8 @@ class TheQuizzler:
 
         self.question_answer_choices.append(question_answer_choices_data)
 
+        self.save_to_file()
+
         self.clear_field()
 
     # Function to clear the input field 
@@ -95,7 +97,19 @@ class TheQuizzler:
     # Exiting the program method
     def exit_program(self):
         self.root.destroy()
-        
+
+    # Saving the question, answer, and choices to a file
+    def save_to_file(self):
+        with open("data_for_the_quizzler.txt", "w") as file:
+            for i, q in enumerate(self.question_answer_choices, 1):
+                file.write(f"Question {i}: {q['question']}\n")
+                file.write(f"Answer: {q['answer']}\n")
+                file.write("Choices:\n")
+                choice_labels = ['A', 'B', 'C', 'D']
+                for j, choice in enumerate(q['choices']):
+                    file.write(f"{choice_labels[j]}: {choice}\n")
+                file.write("-" * 30 + "\n\n")    
+  
 # Initializes the main Tkinter window and runs the event loop to start the GUI application
 if __name__ == "__main__":
     root = tk.Tk()
