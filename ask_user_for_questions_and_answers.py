@@ -43,7 +43,11 @@ class TheQuizzler:
 
             choice_label = tk.Label(choice_frame, text=f"{self.choice_labels[i]}:", anchor="w")
             choice_label.pack(side=tk.LEFT, padx=5)
-            
+
+            # Adding an entry box for each choice (A, B, C, D)
+            entry = tk.Entry(choice_frame)
+            entry.pack(side=tk.LEFT, fill=tk.X)
+                       
 # Initializes the main Tkinter window and runs the event loop to start the GUI application
 if __name__ == "__main__":
     root = tk.Tk()
