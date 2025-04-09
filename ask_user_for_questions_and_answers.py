@@ -50,7 +50,7 @@ class TheQuizzler:
             self.choice_entries.append(entry)
 
         # Creating a save button to save the user's inputted question, answer, and choices
-        self.save_button = tk.Button(root, text="Save", width=15)
+        self.save_button = tk.Button(root, text="Save", width=15, command=self.save_all_inputs)
         self.save_button.pack(side=tk.LEFT, padx=(0,10))
 
         # Creating an exit button to close the application (The Quizzler Maker)
@@ -64,6 +64,24 @@ class TheQuizzler:
         question = self.question_entry.get()
         answer = self.answer_entry.get()
         choices = [entry.get() for entry in self.choice_entries]
+
+        # Validation of inputs
+        if not question:
+            messagebox.showerror("ERROR!", "Question block cannot be empty.")
+
+        elif not answer:
+            messagebox.showerror("ERROR!", "Answer block cannot be empty.")
+
+        if "" in choices:
+            messagebox.showerror("ERROR!", "All choices must be filled.")
+
+        question_answer_choices_data = {
+            "question": question,
+            "answer": answer,
+            "choices": choices
+        }
+
+        self.question_answer_choices.append(question_answer_choices_data)
         
 # Initializes the main Tkinter window and runs the event loop to start the GUI application
 if __name__ == "__main__":
