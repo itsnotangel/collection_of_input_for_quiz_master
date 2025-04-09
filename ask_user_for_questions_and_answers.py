@@ -11,7 +11,12 @@ class TheQuizzler:
         # Adding the main title of the window
         main_title_label = tk.Label(root, text="WELCOME TO THE QUIZZLER", font=("Arial", 18))
         main_title_label.pack(fill=tk.X, pady=(10, 0))
-        
+
+        # Adding the question box for user to input their questions
+        tk.Label(text="Question:", anchor="w").pack(fill=tk.X, padx=20, pady=(10, 0))
+        self.question_entry = tk.Entry(root)
+        self.question_entry.pack(fill=tk.X, padx=18)
+
         # Getting the window size and printing it to the console (Only for checking the size)
         window_width = self.root.winfo_width()
         window_height = self.root.winfo_height()
