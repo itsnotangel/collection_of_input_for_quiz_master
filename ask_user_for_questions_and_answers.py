@@ -27,6 +27,9 @@ class TheQuizzler:
         window_height = self.root.winfo_height()
         print(f"Window Size: {window_width}x{window_height}")
 
+        # Adding a "Choices" label text 
+        tk.Label(text="Choices:", anchor="w").pack(fill=tk.X, padx=20, pady=(10, 0))
+
 # Initializes the main Tkinter window and runs the event loop to start the GUI application
 if __name__ == "__main__":
     root = tk.Tk()
