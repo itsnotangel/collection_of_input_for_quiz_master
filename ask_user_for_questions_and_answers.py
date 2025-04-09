@@ -6,7 +6,7 @@ from tkinter import messagebox
 class TheQuizzler:
     def __init__(self, root):
         self.root = root
-        self.root.geometry("50x50")
+        self.root.geometry("400x400")
 
         # Getting the window size and printing it to the console (Only for checking the size)
         window_width = self.root.winfo_width()
