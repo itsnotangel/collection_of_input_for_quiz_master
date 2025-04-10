@@ -7,7 +7,7 @@ class TheQuizzler:
     def __init__(self, root):
         self.root = root
         self.root.title("The Quizzler - The ultimate Quiz in the Making")
-        self.root.geometry("500x410")
+        self.root.geometry("500x490")
 
         main_frame = tk.Frame(root, bd=5, relief="groove", padx=20, pady=20)
         main_frame.pack(fill="both", padx=20, pady=20)
@@ -36,7 +36,7 @@ class TheQuizzler:
         print(f"Window Size: {window_width}x{window_height}")
 
         # Adding a "Choices" label text 
-        tk.Label(text="Choices:", font=("Arial", 8, "bold"), fg="darkred", anchor="w").pack(fill=tk.X, padx=20, pady=(10, 0))
+        tk.Label(main_frame, text="Choices:", font=("Arial", 8, "bold"), fg="darkred", anchor="w").pack(fill=tk.X, padx=20, pady=(10, 0))
 
         # Creating a list of entries storing the choices inputted by the user
         self.choice_entries = []
@@ -46,7 +46,7 @@ class TheQuizzler:
 
         # Looping over the choices to assign a labels for each one
         for i in range(4):
-            choice_frame = tk.Frame(root)
+            choice_frame = tk.Frame(main_frame)
             choice_frame.pack(fill=tk.X, padx=20, pady=5)
 
             choice_label = tk.Label(choice_frame, text=f"{self.choice_labels[i]}:", font=("Arial", 8, "bold"), fg="black", anchor="w")
@@ -58,11 +58,11 @@ class TheQuizzler:
             self.choice_entries.append(entry)
 
         # Creating a save button to save the user's inputted question, answer, and choices
-        self.save_button = tk.Button(root, text="Save", font=("Arial", 8, "bold"), fg="darkred", width=15, command=self.save_all_inputs)
+        self.save_button = tk.Button(main_frame, text="Save", font=("Arial", 8, "bold"), fg="darkred", width=15, command=self.save_all_inputs)
         self.save_button.pack(pady=(10, 0))
 
         # Creating an exit button to close the application (The Quizzler Maker)
-        self.exit_button = tk.Button(root, text="Exit", font=("Arial", 8, "bold"), fg="darkred", width=15, command=self.exit_program)
+        self.exit_button = tk.Button(main_frame, text="Exit", font=("Arial", 8, "bold"), fg="darkred", width=15, command=self.exit_program)
         self.exit_button.pack(pady=(10, 0))     
 
         # Create a storage for questions, answer, and choices from the user
