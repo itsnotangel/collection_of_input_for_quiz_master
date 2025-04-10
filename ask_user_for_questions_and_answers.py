@@ -7,7 +7,7 @@ class TheQuizzler:
     def __init__(self, root):
         self.root = root
         self.root.title("The Quizzler - The ultimate Quiz in the Making")
-        self.root.geometry("500x490")
+        self.root.geometry("500x500")
 
         main_frame = tk.Frame(root, bd=5, relief="groove", padx=20, pady=20)
         main_frame.pack(fill="both", padx=20, pady=20)
