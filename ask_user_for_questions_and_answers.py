@@ -1,5 +1,6 @@
 # Imported tkinter for GUI components and messagebox for pop-up messages
 import tkinter as tk
+
 from tkinter import messagebox
 
 # The Quizzler class definition, which sets up the main app window and specific dimension
