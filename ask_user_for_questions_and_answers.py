@@ -94,6 +94,7 @@ class TheQuizzler:
         # Append the question, answer, and choices to the stored list
         self.question_answer_choices.append(question_answer_choices_data)
 
+        # Save the stored data to a file
         self.save_to_file()
 
         self.clear_field()
