@@ -9,8 +9,11 @@ class TheQuizzler:
         self.root.title("The Quizzler - The ultimate Quiz in the Making")
         self.root.geometry("500x410")
 
+        main_frame = tk.Frame(root, bd=5, relief="groove", padx=20, pady=20)
+        main_frame.pack(fill="both", padx=20, pady=20)
+
         # Adding the main title of the window
-        main_title_label = tk.Label(root, text="WELCOME TO THE QUIZZLER", font=("Arial", 18, "bold"), fg="darkred")
+        main_title_label = tk.Label(main_frame, text="WELCOME TO THE QUIZZLER", font=("Arial", 18, "bold"), fg="darkred")
         main_title_label.pack(fill=tk.X, pady=(10, 0))
 
         # Adding an instruction label to guide the user on how to use the application
