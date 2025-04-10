@@ -96,9 +96,11 @@ class TheQuizzler:
 
         # Save the stored data to a file
         self.save_to_file()
-
+        
+        # Clear all input fields for new data
         self.clear_field()
 
+        # Show a success message to the user
         messagebox.showinfo("SUCCESS!", "All the inputs have been saved successfully!")
 
     # Function to clear the input field 
