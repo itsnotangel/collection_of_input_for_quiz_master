@@ -9,6 +9,7 @@ class TheQuizzler:
         self.root.title("The Quizzler - The ultimate Quiz in the Making")
         self.root.geometry("500x500")
 
+        # Creating a main frame for the application
         main_frame = tk.Frame(root, bd=5, relief="groove", padx=20, pady=20)
         main_frame.pack(fill="both", padx=20, pady=20)
 
