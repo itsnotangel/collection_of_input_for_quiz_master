@@ -17,7 +17,7 @@ class TheQuizzler:
         main_title_label.pack(fill=tk.X, pady=(10, 0))
 
         # Adding an instruction label to guide the user on how to use the application
-        instruction = tk.Label(main_frame, text="Enter question, answer (strictly letter only from A-D), and four choices.", font=("Arial", 10), fg="grey")
+        instruction = tk.Label(main_frame, text="Enter the question, answer (strictly letters A, B, C, or D), and \nfour choices.", font=("Arial", 10), fg="grey")
         instruction.pack(fill=tk.X, pady=(0, 10))
 
         # Adding the question box for user to input their questions
