@@ -100,7 +100,7 @@ class TheQuizzler:
     # Function to clear the input field 
     def clear_field(self):
         self.question_entry.delete(0, tk.END)
-        self.answer_entry.delete(0, tk. END)
+        self.answer_entry.delete(0, tk.END)
         for entry in self.choice_entries:
             entry.delete(0, tk.END)
 
