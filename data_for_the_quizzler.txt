@@ -1,0 +1,27 @@
+Question 1: How old is Angel Laika?
+Answer: A
+Choices:
+A: 19
+B: 21
+C: 34
+D: 91
+------------------------------
+
+Question 2: What is my name?
+Answer: D
+Choices:
+A: Angle
+B: Mia
+C: Kay
+D: Angel
+------------------------------
+
+Question 3: What is the color of an orange?
+Answer: C
+Choices:
+A: Pink
+B: Idk
+C: Orange
+D: Dark red
+------------------------------
+
