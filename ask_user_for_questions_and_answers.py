@@ -69,6 +69,7 @@ class TheQuizzler:
         self.question_answer_choices = []
     
     def save_all_inputs(self):
+        # Getting the user's input for question, answer, and choices
         question = self.question_entry.get()
         answer = self.answer_entry.get()
         choices = [entry.get() for entry in self.choice_entries]
