@@ -47,6 +47,16 @@ class TheQuizzler:
             )
             button.pack(fill=tk.X)
 
+        # Creating a "Next Question" button to move on to the next question
+        self.next_question_button = tk.Button(
+            main_frame,
+            text="NEXT QUESTION",
+            font =("Arial", 10, "bold"),
+            fg="darkred",
+            width=15,
+        )
+        self.next_question_button.pack(pady=(10,0))
+
         # Creating exit button to close the application
         self.exit_button = tk.Button(
             main_frame,
