@@ -47,6 +47,16 @@ class TheQuizzler:
             )
             button.pack(fill=tk.X)
 
+        # Creating exit button to close the application
+        self.exit_button = tk.Button(
+            main_frame,
+            text="EXIT",
+            font=("Arial", 10, "bold"),
+            fg="darkred",
+            width=15,
+        )
+        self.exit_button.pack(pady=(10, 0))
+
 # Initializes the main Tkinter window and runs the event loop to start the GUI application
 if __name__ == "__main__":
     root = tk.Tk()
