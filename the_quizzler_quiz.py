@@ -26,6 +26,27 @@ class TheQuizzler:
         instruction_label = tk.Label(main_frame, text="Instruction: Select the correct answer from the four choices.", font=("Arial", 10), fg="grey")
         instruction_label.pack(fill=tk.X, pady=(0, 5))
 
+        # Creating a frame for each of the choices
+        self.choices_frame = tk.Frame(main_frame)
+        self.choices_frame.pack(fill=tk.X, padx=20, pady=10)
+
+        # Adding a label for each choice (From A to D)
+        self.choices_button = []
+        for i in range(4):
+            choice_frame = tk.Frame(self.choices_frame)
+            choice_frame.pack(fill=tk.X, pady=5)
+
+            label = ["A.", "B.", "C.", "D."][i]
+            button = tk.Button(
+                choice_frame,
+                text=f"{label}",
+                font=("Arial", 10, "bold"),
+                anchor="w",
+                width=30,
+                fg="darkred",
+            )
+            button.pack(fill=tk.X)
+
 # Initializes the main Tkinter window and runs the event loop to start the GUI application
 if __name__ == "__main__":
     root = tk.Tk()
