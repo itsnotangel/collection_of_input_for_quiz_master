@@ -10,11 +10,6 @@ class TheQuizzler:
         self.root = root
         self.root.geometry("600x600")
 
-        # Getting the window size and printing it to the console (Only for checking the size)
-        window_width = self.root.winfo_width()
-        window_height = self.root.winfo_height()
-        print(f"Window Size: {window_width}x{window_height}")
-
 # Initializes the main Tkinter window and runs the event loop to start the GUI application
 if __name__ == "__main__":
     root = tk.Tk()
