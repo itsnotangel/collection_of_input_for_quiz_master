@@ -22,6 +22,10 @@ class TheQuizzler:
         sub_title_label = tk.Label(main_frame, text="THE ULTIMATE QUIZ EDITION", font=("Arial", 20, "bold"), fg="darkred")
         sub_title_label.pack(fill=tk.X, pady=(0, 10))
 
+        # Instruction label to guide user how to use the application
+        instruction_label = tk.Label(main_frame, text="Instruction: Select the correct answer from the four choices.", font=("Arial", 10), fg="grey")
+        instruction_label.pack(fill=tk.X, pady=(0, 5))
+
 # Initializes the main Tkinter window and runs the event loop to start the GUI application
 if __name__ == "__main__":
     root = tk.Tk()
