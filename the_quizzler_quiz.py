@@ -77,22 +77,22 @@ class TheQuizzler:
             main_frame,
             text="NEXT QUESTION",
             font =("Arial", 10, "bold"),
-            fg="darkred",
+            fg="black",
             width=15,
             command=self.next_question
         )
-        self.next_question_button.pack(side=tk.LEFT, padx=10)
+        self.next_question_button.pack(side=tk.LEFT, padx=20, pady=(10, 0))
 
         # Creating exit button to close the application
         self.exit_button = tk.Button(
             main_frame,
             text="EXIT QUIZ",
             font=("Arial", 10, "bold"),
-            fg="darkred",
+            fg="black",
             width=15,
             command=self.root.destroy
         )
-        self.exit_button.pack(side=tk.RIGHT, padx=10)
+        self.exit_button.pack(side=tk.RIGHT, padx=20, pady=(10, 0))
 
         # Creating a function to load questions from a text file
         self.load_questions()
