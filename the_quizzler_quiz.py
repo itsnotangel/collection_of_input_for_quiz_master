@@ -8,6 +8,7 @@ from tkinter import messagebox
 class TheQuizzler:
     def __init__(self, root):
         self.root = root
+        self.root.title("The Quizzler - The Ultimate Quiz Edition")
         self.root.geometry("600x600")
 
         # Initializing variables needed
