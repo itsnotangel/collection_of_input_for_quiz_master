@@ -4,6 +4,9 @@ import tkinter as tk
 # Imported messagebox for pop-up messages
 from tkinter import messagebox
 
+# Imported random for randomizing question selection
+import random
+
 # The Quizzler class definition, which sets up the main app window and specific dimension
 class TheQuizzler:
     def __init__(self, root):
@@ -132,6 +135,32 @@ class TheQuizzler:
         # Showing popup message if the file is missing
         except FileNotFoundError:
             messagebox.showerror("ERROR!", "Quiz data file not found.")
+            
+        def next_question(self):
+        # Enable all choice buttons
+        for button in self.choice_buttons:
+            button.config(state=tk.NORMAL)
+        
+        # Select a random question if there are any left
+        if self.questions:
+            self.current_question_index = random.randint(0, len(self.questions) - 1)
+            self.current_question = self.questions.pop(self.current_question_index)
+            
+            # Display the question
+            self.question_label.config(text=self.current_question["question"])
+            
+            # Update choice buttons with the choices
+            for i in range(4):
+                self.choice_buttons[i].config(text=f"{self.choice_labels[i]}. {self.current_question['choices'][i]}")
+            
+            # Update score display
+            self.score_label.config(text=f"Score: {self.score}/{self.total_questions - len(self.questions)}")
+        else:
+            # No more questions, show final score
+            self.question_label.config(text=f"Quiz completed! Final score: {self.score}/{self.total_questions}")
+            for button in self.choice_buttons:
+                button.config(state=tk.DISABLED)
+            self.next_question_button.config(state=tk.DISABLED)
 
 # Initializes the main Tkinter window and runs the event loop to start the GUI application
 if __name__ == "__main__":
