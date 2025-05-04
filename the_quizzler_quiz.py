@@ -10,6 +10,13 @@ class TheQuizzler:
         self.root = root
         self.root.geometry("600x600")
 
+        # Initializing variables needed
+        self.questions = []
+        self.current_question = None
+        self.current_question_index = 0
+        self.score = 0
+        self.total_questions = 0
+
         # Creating the main frame 
         main_frame = tk.Frame(root, bd=5, relief="groove", padx=20, pady="20")
         main_frame.pack(fill="both", padx=20, pady=20)
