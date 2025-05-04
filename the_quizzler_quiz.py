@@ -50,15 +50,16 @@ class TheQuizzler:
         self.choices_frame.pack(fill=tk.X, padx=20, pady=10)
 
         # Adding a label for each choice (From A to D)
-        self.choices_button = []
+        self.choice_buttons = []
+        self.choice_labels = ["A", "B", "C", "D"]
+        
         for i in range(4):
             choice_frame = tk.Frame(self.choices_frame)
             choice_frame.pack(fill=tk.X, pady=5)
 
-            label = ["A.", "B.", "C.", "D."][i]
             button = tk.Button(
                 choice_frame,
-                text=f"{label}",
+                text=f"{self.choice_labels[i]}. ",
                 font=("Arial", 10, "bold"),
                 anchor="w",
                 width=30,
