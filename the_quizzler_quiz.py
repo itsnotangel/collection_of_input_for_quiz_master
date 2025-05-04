@@ -8,7 +8,7 @@ from tkinter import messagebox
 import random
 
 # The Quizzler class definition, which sets up the main app window and specific dimension
-class TheQuizzler:
+class TheQuizzlerApp:
     def __init__(self, root):
         self.root = root
         self.root.title("The Quizzler - The Ultimate Quiz Edition")
@@ -196,5 +196,5 @@ class TheQuizzler:
 # Initializes the main Tkinter window and runs the event loop to start the GUI application
 if __name__ == "__main__":
     root = tk.Tk()
-    app = TheQuizzler(root)
+    app = TheQuizzlerApp(root)
     root.mainloop()
