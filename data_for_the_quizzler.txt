@@ -1,45 +1,27 @@
-Question 1: Who is the winner of Miss Universe 2025?
+Question 1: What is my name?
+Answer: A
+Choices:
+A: Angel
+B: Jisoo
+C: Lisa
+D: Jennie
+------------------------------
+
+Question 2: Who won Miss Universe Philippines 2025?
 Answer: D
 Choices:
 A: Ycz Aubhrey Mangahas
 B: Angel Laika Clarito
-C: Adrian Kurt Luna
+C: Adrian Kurt Anne Luna
 D: Athisa Manalo
 ------------------------------
 
-Question 2: Will I ever get a big, fat, and white cow in Grow a Garden in Roblox?
+Question 3: What is my favourite food?
 Answer: B
 Choices:
-A: No
-B: I don't know the chances
-C: Maybe
-D: Buy me robux
-------------------------------
-
-Question 3: What is my favourite color?
-Answer: C
-Choices:
-A: Amethyst Glow #B19CD9
-B: Sarcoline
-C: Pink
-D: Heliotrope 
-------------------------------
-
-Question 4: Will you ever try to vote for good governance this coming election?
-Answer: D
-Choices:
-A: Maybe
-B: No
-C: Hehe
-D: Of course
-------------------------------
-
-Question 5: Finish the lyrics: "Bakit nga ba mahal kita..."
-Answer: A
-Choices:
-A: Kahit na may mahal ka mang iba?
-B: We are the champions my friend
-C: Elphie, listen to me, just say you're sorry
-D: Wag na wag mong sasabihin
+A: Spaghetti
+B: Chocopao
+C: Lasagna
+D: Sinigang
 ------------------------------
 
