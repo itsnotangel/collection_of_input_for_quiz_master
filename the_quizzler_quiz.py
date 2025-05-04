@@ -77,6 +77,7 @@ class TheQuizzler:
             font =("Arial", 10, "bold"),
             fg="darkred",
             width=15,
+            command=self.next_question
         )
         self.next_question_button.pack(pady=(10,0))
 
