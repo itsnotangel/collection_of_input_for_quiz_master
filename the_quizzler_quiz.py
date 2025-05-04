@@ -12,7 +12,7 @@ class TheQuizzler:
     def __init__(self, root):
         self.root = root
         self.root.title("The Quizzler - The Ultimate Quiz Edition")
-        self.root.geometry("600x600")
+        self.root.geometry("600x530")
 
         # Initializing variables needed
         self.questions = []
