@@ -22,7 +22,7 @@ class TheQuizzler:
         self.total_questions = 0
 
         # Creating the main frame 
-        main_frame = tk.Frame(root, bd=5, relief="groove", padx=20, pady="20")
+        main_frame = tk.Frame(root, bd=5, relief="groove", padx=20, pady=20)
         main_frame.pack(fill="both", padx=20, pady=20)
 
         # Adding the main title 
@@ -62,7 +62,7 @@ class TheQuizzler:
 
             button = tk.Button(
                 choice_frame,
-                text=f"{self.choice_labels[i]}. ",
+                text=f"{self.choice_labels[i]}.",
                 font=("Arial", 10, "bold"),
                 anchor="w",
                 width=30,
@@ -76,7 +76,7 @@ class TheQuizzler:
         self.next_question_button = tk.Button(
             main_frame,
             text="NEXT QUESTION",
-            font =("Arial", 10, "bold"),
+            font=("Arial", 10, "bold"),
             fg="black",
             width=15,
             command=self.next_question
