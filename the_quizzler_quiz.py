@@ -87,6 +87,51 @@ class TheQuizzler:
         )
         self.exit_button.pack(pady=(10, 0))
 
+    # Created a function that reads questions from a text file and adds those to the Quizzler
+    def load_questions(self):
+        try:
+            # Opening and reading the quiz data file
+            with open("data_for_the_quizzler.txt", "r") as file:
+                content = file.read()
+                
+            sections = content.split("-" * 30)
+            
+            for section in sections:
+                if not section.strip():
+                    continue
+                    
+                lines = section.strip().split("\n")
+                if len(lines) < 7:  
+                    continue
+                    
+                # Getting the question text from line 1
+                question_text = lines[0].replace("Question", "", 1).split(":", 1)[1].strip()
+                
+                # Getting the correct answer from line 2
+                answer = lines[1].split(":", 1)[1].strip()
+                
+                # Getting choices from lines 4 to 7
+                choices = []
+                for i in range(3, 7):  
+                    if i < len(lines):
+                        choice = lines[i].split(":", 1)[1].strip()
+                        choices.append(choice)
+                
+                # Adding to questions list
+                if question_text and answer and len(choices) == 4:
+                    self.questions.append({
+                        "question": question_text,
+                        "answer": answer,
+                        "choices": choices
+                    })
+
+            # Updating the total question count
+            self.total_questions = len(self.questions)
+        
+        # Showing popup message if the file is missing
+        except FileNotFoundError:
+            messagebox.showerror("ERROR!", "Quiz data file not found.")
+
 # Initializes the main Tkinter window and runs the event loop to start the GUI application
 if __name__ == "__main__":
     root = tk.Tk()
