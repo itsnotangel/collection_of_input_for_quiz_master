@@ -69,6 +69,7 @@ class TheQuizzler:
                 fg="darkred",
             )
             button.pack(fill=tk.X)
+            self.choice_buttons.append(button)
 
         # Creating a "Next Question" button to move on to the next question
         self.next_question_button = tk.Button(
@@ -91,6 +92,16 @@ class TheQuizzler:
             command=self.root.destroy
         )
         self.exit_button.pack(pady=(10, 0))
+
+        # Creating a function to load questions from a text file
+        self.load_questions()
+
+        # Starting the quiz if there are questions available
+        if self.questions:
+            self.next_question()
+        else:
+            messagebox.showerror("ERROR!", "There are no questions found. Make sure that you created questions.")
+            root.destroy()
 
     # Created a function that reads questions from a text file and adds those to the Quizzler
     def load_questions(self):
