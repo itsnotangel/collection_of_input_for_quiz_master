@@ -136,7 +136,7 @@ class TheQuizzler:
         except FileNotFoundError:
             messagebox.showerror("ERROR!", "Quiz data file not found.")
             
-        def next_question(self):
+    def next_question(self):
         # Enable all choice buttons
         for button in self.choice_buttons:
             button.config(state=tk.NORMAL)
