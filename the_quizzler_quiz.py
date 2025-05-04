@@ -1,46 +1,46 @@
-# Imported tkinder for GUI components
+# Import tkinder for GUI components
 import tkinter as tk
 
-# Imported messagebox for pop-up messages
+# Import messagebox for pop-up messages
 from tkinter import messagebox
 
-# Imported random for randomizing question selection
+# Import random for randomizing question selection
 import random
 
-# The Quizzler class definition, which sets up the main app window and specific dimension
+# The main application class for the quiz
 class TheQuizzlerApp:
     def __init__(self, root):
         self.root = root
         self.root.title("The Quizzler - The Ultimate Quiz Edition")
         self.root.geometry("600x530")
 
-        # Initializing variables needed
+        # Initialize variables needed
         self.questions = []
         self.current_question = None
         self.current_question_index = 0
         self.score = 0
         self.total_questions = 0
 
-        # Creating the main frame 
+        # Create the main frame 
         main_frame = tk.Frame(root, bd=5, relief="groove", padx=20, pady=20)
         main_frame.pack(fill="both", padx=20, pady=20)
 
-        # Adding the main title 
+        # Create the main title 
         main_title_label = tk.Label(main_frame, text="THE QUIZZLER", font=("Arial", 30, "bold"), fg="darkred")
         main_title_label.pack(fill=tk.X, pady=(10, 0))
 
-        # Adding the subtitle
+        # Create the subtitle
         sub_title_label = tk.Label(main_frame, text="THE ULTIMATE QUIZ EDITION", font=("Arial", 20, "bold"), fg="darkred")
         sub_title_label.pack(fill=tk.X, pady=(0, 10))
 
-        # Creating a frame for the question
+        # Create a frame for the question
         self.question_frame = tk.Frame(main_frame)
         self.question_frame.pack(fill=tk.X, padx=20, pady=10)
         
         self.question_label = tk.Label(self.question_frame, text="", font=("Arial", 12), wraplength=500, justify="left")
         self.question_label.pack(fill=tk.X, pady=10)
 
-        # Creating a score display
+        # Question label to display the current question
         self.score_label = tk.Label(main_frame, text="Score: 0/0", font=("Arial", 12, "bold"), fg="darkred")
         self.score_label.pack(fill=tk.X, pady=(0, 10))
 
@@ -48,11 +48,11 @@ class TheQuizzlerApp:
         instruction_label = tk.Label(main_frame, text="Instruction: Select the correct answer from the four choices.", font=("Arial", 10), fg="grey")
         instruction_label.pack(fill=tk.X, pady=(0, 5))
 
-        # Creating a frame for each of the choices
+        # Create a frame for each of the choices
         self.choices_frame = tk.Frame(main_frame)
         self.choices_frame.pack(fill=tk.X, padx=20, pady=10)
 
-        # Adding a label for each choice (From A to D)
+        # Add a label for each choice (From A to D)
         self.choice_buttons = []
         self.choice_labels = ["A", "B", "C", "D"]
         
@@ -83,7 +83,7 @@ class TheQuizzlerApp:
         )
         self.next_question_button.pack(side=tk.LEFT, padx=20, pady=(10, 0))
 
-        # Creating exit button to close the application
+        # Create an exit button to close the application
         self.exit_button = tk.Button(
             main_frame,
             text="EXIT QUIZ",
@@ -94,20 +94,20 @@ class TheQuizzlerApp:
         )
         self.exit_button.pack(side=tk.RIGHT, padx=20, pady=(10, 0))
 
-        # Creating a function to load questions from a text file
+        # Create a function to load questions from a text file
         self.load_questions()
 
-        # Starting the quiz if there are questions available
+        # Start the quiz if there are questions available
         if self.questions:
             self.next_question()
         else:
             messagebox.showerror("ERROR!", "There are no questions found. Make sure that you created questions.")
             root.destroy()
 
-    # Created a function that reads questions from a text file and adds those to the Quizzler
+    # Create a function that reads questions from a text file and adds those to the Quizzler
     def load_questions(self):
         try:
-            # Opening and reading the quiz data file
+            # Open and read the quiz data file
             with open("data_for_the_quizzler.txt", "r") as file:
                 content = file.read()
                 
@@ -121,20 +121,20 @@ class TheQuizzlerApp:
                 if len(lines) < 7:  
                     continue
                     
-                # Getting the question text from line 1
+                # Get the question text from line 1
                 question_text = lines[0].replace("Question", "", 1).split(":", 1)[1].strip()
                 
-                # Getting the correct answer from line 2
+                # Get the correct answer from line 2
                 answer = lines[1].split(":", 1)[1].strip()
                 
-                # Getting choices from lines 4 to 7
+                # Get choices from lines 4 to 7
                 choices = []
                 for i in range(3, 7):  
                     if i < len(lines):
                         choice = lines[i].split(":", 1)[1].strip()
                         choices.append(choice)
                 
-                # Adding to questions list
+                # Add to questions list
                 if question_text and answer and len(choices) == 4:
                     self.questions.append({
                         "question": question_text,
@@ -142,10 +142,10 @@ class TheQuizzlerApp:
                         "choices": choices
                     })
 
-            # Updating the total question count
+            # Update the total question count
             self.total_questions = len(self.questions)
         
-        # Showing popup message if the file is missing
+        # Show popup message if the file is missing
         except FileNotFoundError:
             messagebox.showerror("ERROR!", "Quiz data file not found.")
             
@@ -169,7 +169,7 @@ class TheQuizzlerApp:
             # Update score display
             self.score_label.config(text=f"Score: {self.score}/{self.total_questions - len(self.questions)}")
         else:
-            # No more questions, show final score
+            # If no more questions, show final score
             self.question_label.config(text=f"Quiz completed! Final score: {self.score}/{self.total_questions}")
             for button in self.choice_buttons:
                 button.config(state=tk.DISABLED)
