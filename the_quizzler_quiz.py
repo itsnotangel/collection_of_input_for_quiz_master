@@ -67,6 +67,7 @@ class TheQuizzler:
                 anchor="w",
                 width=30,
                 fg="darkred",
+                command=lambda idx=i: self.check_answer(self.choice_labels[idx])
             )
             button.pack(fill=tk.X)
             self.choice_buttons.append(button)
@@ -173,6 +174,24 @@ class TheQuizzler:
             for button in self.choice_buttons:
                 button.config(state=tk.DISABLED)
             self.next_question_button.config(state=tk.DISABLED)
+
+    # Function to check the user's selected answer
+    def check_answer(self, selected_answer):
+        if self.current_question:
+            correct_answer = self.current_question["answer"].upper()
+
+            if selected_answer == correct_answer:
+                self.score += 1
+                messagebox.showinfo("CORRECT!", "You selected the correct answer!")
+            else:
+                messagebox.showerror("INCORRECT!", f"The correct answer to that is {correct_answer}.")
+            
+            # Disabling all choice buttons after an answer is selected
+            for button in self.choice_buttons:
+                button.config(state=tk.DISABLED)
+
+            # Updating the score display
+            self.score_label.config(text=f"Score: {self.score}/{self.total_questions - len(self.questions)}")
 
 # Initializes the main Tkinter window and runs the event loop to start the GUI application
 if __name__ == "__main__":
