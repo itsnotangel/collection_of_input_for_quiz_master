@@ -83,6 +83,7 @@ class TheQuizzler:
             font=("Arial", 10, "bold"),
             fg="darkred",
             width=15,
+            command=self.root.destroy
         )
         self.exit_button.pack(pady=(10, 0))
 
