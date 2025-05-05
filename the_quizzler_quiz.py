@@ -18,7 +18,7 @@ class TheQuizzlerApp:
         self.questions = []
         self.current_question = None
         self.current_question_index = 0
-        self.score = 0
+        self.score_count = 0
         self.total_questions = 0
 
         # Create the main frame 
@@ -167,10 +167,10 @@ class TheQuizzlerApp:
                 self.choice_buttons[i].config(text=f"{self.choice_labels[i]}. {self.current_question['choices'][i]}")
             
             # Update score display
-            self.score_label.config(text=f"Score: {self.score}/{self.total_questions - len(self.questions)}")
+            self.score_label.config(text=f"Score: {self.score_count}/{self.total_questions - len(self.questions)}")
         else:
             # If no more questions, show final score
-            self.question_label.config(text=f"Quiz completed! Final score: {self.score}/{self.total_questions}")
+            self.question_label.config(text=f"Quiz completed! Final score: {self.score_count}/{self.total_questions}")
             for button in self.choice_buttons:
                 button.config(state=tk.DISABLED)
             self.next_question_button.config(state=tk.DISABLED)
@@ -181,7 +181,7 @@ class TheQuizzlerApp:
             correct_answer = self.current_question["answer"].upper()
 
             if selected_answer == correct_answer:
-                self.score += 1
+                self.score_count += 1
                 messagebox.showinfo("CORRECT!", "You selected the correct answer!")
             else:
                 messagebox.showerror("INCORRECT!", f"The correct answer to that is {correct_answer}.")
@@ -191,7 +191,7 @@ class TheQuizzlerApp:
                 button.config(state=tk.DISABLED)
 
             # Updating the score display
-            self.score_label.config(text=f"Score: {self.score}/{self.total_questions - len(self.questions)}")
+            self.score_label.config(text=f"Score: {self.score_count}/{self.total_questions - len(self.questions)}")
 
 # Initializes the main Tkinter window and runs the event loop to start the GUI application
 if __name__ == "__main__":
