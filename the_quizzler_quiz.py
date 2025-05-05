@@ -1,4 +1,4 @@
-# Import tkinder for GUI components
+# Import tkinter for GUI components
 import tkinter as tk
 
 # Import messagebox for pop-up messages
