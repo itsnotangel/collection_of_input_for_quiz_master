@@ -15,7 +15,7 @@ class TheQuizzlerApp:
         self.root.geometry("600x530")
 
         # Initialize variables needed
-        self.questions = []
+        self.quiz_questions = []
         self.current_question = None
         self.current_question_index = 0
         self.score_count = 0
@@ -98,7 +98,7 @@ class TheQuizzlerApp:
         self.load_questions()
 
         # Start the quiz if there are questions available
-        if self.questions:
+        if self.quiz_questions:
             self.next_question()
         else:
             messagebox.showerror("ERROR!", "There are no questions found. Make sure that you created questions.")
@@ -136,14 +136,14 @@ class TheQuizzlerApp:
                 
                 # Add to questions list
                 if question_text and answer and len(choices) == 4:
-                    self.questions.append({
+                    self.quiz_questions.append({
                         "question": question_text,
                         "answer": answer,
                         "choices": choices
                     })
 
             # Update the total question count
-            self.total_questions = len(self.questions)
+            self.total_questions = len(self.quiz_questions)
         
         # Show popup message if the file is missing
         except FileNotFoundError:
@@ -155,9 +155,9 @@ class TheQuizzlerApp:
             button.config(state=tk.NORMAL)
         
         # Select a random question if there are any left
-        if self.questions:
-            self.current_question_index = random.randint(0, len(self.questions) - 1)
-            self.current_question = self.questions.pop(self.current_question_index)
+        if self.quiz_questions:
+            self.current_question_index = random.randint(0, len(self.quiz_questions) - 1)
+            self.current_question = self.quiz_questions.pop(self.current_question_index)
             
             # Display the question
             self.question_label.config(text=self.current_question["question"])
@@ -167,7 +167,7 @@ class TheQuizzlerApp:
                 self.choice_buttons[i].config(text=f"{self.choice_labels[i]}. {self.current_question['choices'][i]}")
             
             # Update score display
-            self.score_label.config(text=f"Score: {self.score_count}/{self.total_questions - len(self.questions)}")
+            self.score_label.config(text=f"Score: {self.score_count}/{self.total_questions - len(self.quiz_questions)}")
         else:
             # If no more questions, show final score
             self.question_label.config(text=f"Quiz completed! Final score: {self.score_count}/{self.total_questions}")
@@ -191,7 +191,7 @@ class TheQuizzlerApp:
                 button.config(state=tk.DISABLED)
 
             # Updating the score display
-            self.score_label.config(text=f"Score: {self.score_count}/{self.total_questions - len(self.questions)}")
+            self.score_label.config(text=f"Score: {self.score_count}/{self.total_questions - len(self.quiz_questions)}")
 
 # Initializes the main Tkinter window and runs the event loop to start the GUI application
 if __name__ == "__main__":
